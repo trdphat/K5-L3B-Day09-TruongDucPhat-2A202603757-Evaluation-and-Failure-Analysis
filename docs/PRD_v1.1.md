@@ -76,4 +76,4 @@ V2 dùng eval set 28 item × 5 seed, SHA `57a7653f56f8`, spec `2.1`, baseline `E
 | Vai trò | Người phụ trách | Ngày cập nhật | Trạng thái |
 |---|---|---|---|
 | Product | Trương Đức Phát | 18/11/2026 | Bản đề xuất pilot offline, chờ chủ repo xác nhận |
-| Eval owner (giữ gate) | Trương Đức Phát | 18/11/2026 | Đã kiểm chứng local M0–M7, chờ CI trên PR |
+| Eval owner (giữ gate) | Trương Đức Phát | 18/11/2026 | Local M0–M7 đạt, CI Core và Advanced xanh trên PR #1, run 44235070790 |

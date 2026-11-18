@@ -12,14 +12,14 @@ Làm thêm Advanced/Expert sau buổi: tiếp tục trên nhánh, mở PR mới 
 - [x] `docs/failure_taxonomy.md`, `docs/trace_case.md` (1 case + regression test), `docs/judge_audit.md`, `docs/eval_card.md`, `docs/PRD_v1.1.md`
 - [x] `src/reports/baseline_v1.json`, `eval_fixed.json`, `eval_seeded_regression.json` sinh bằng script
 - [x] `src/harness_map.yaml` có section `eval` (mẫu: `src/harness_map.eval.yaml`)
-- [ ] Job `eval-gate` xanh; dán output gate exit 1 của `seeded_regression` vào mô tả PR
+- [x] Job `eval-gate` xanh; output gate exit 1 của `seeded_regression` đã có trong mô tả PR
 
 ## Advanced / Expert (tới hạn nộp)
 - [x] `src/config/fm_map.yaml`, `src/config/metric_spec_v2.yaml` (slices, `pass_hat_5`, metric FM-08), `stats.pass_at_k/pass_hat_k`, `gate.slice_check`, `gate.integrity_check`
 - [x] `src/data/eval/eval_set_v2.jsonl` + `labels_v2.json` sinh bằng `evalset --v2 --build`
 - [x] `src/reports/baseline_v2.json` sinh bằng script
-- [ ] Job `eval-gate-v2` xanh trên PR
-- [ ] Mô tả PR: output `lab9.mutation` (scorecard + `--aa`) và 4 dòng `exit 1` của các trap
+- [x] Job `eval-gate-v2` xanh trên PR
+- [x] Mô tả PR có output `lab9.mutation`, A/A và bốn dòng exit 1 của trap
 - [x] `docs/eval_card.md` thêm mục v2 gồm ngưỡng từ A/A, slice và giới hạn cỡ mẫu
 
 ## Bằng chứng và bước nộp
@@ -28,10 +28,12 @@ Kiểm chứng local ngày 18/11/2026 đạt 57 test nền, 47 test Lab9 và 28 
 
 - [x] Commit code, tài liệu và report sinh bằng script, force-add các report bị gitignore.
 
-- [ ] Push nhánh `starter/d09` lên fork.
-- [ ] Mở PR `starter/d09` → `main` trong fork và dán bằng chứng bên dưới.
-- [ ] CI Core và Advanced xanh, merge PR vào main.
+- [x] Push nhánh `starter/d09` lên fork.
+- [x] Mở PR `starter/d09` → `main` trong fork và dán bằng chứng bên dưới.
+- [x] CI Core và Advanced xanh tại run `44235070790`, commit `d47be97`.
 - [ ] Dán link fork lên LMS của ca.
+
+PR #1 nằm trong bản fork cá nhân. Cả ba job detect, eval-gate và eval-gate-v2 đã hoàn thành thành công, gồm các bước test và mutation v2. Trạng thái merge và CI của commit mới nhất được xem trực tiếp trên PR. [PR #1](https://github.com/trdphat/K5-L3B-Day09-TruongDucPhat-2A202603757-Evaluation-and-Failure-Analysis/pull/1), [CI Linux đã xác nhận](https://github.com/trdphat/K5-L3B-Day09-TruongDucPhat-2A202603757-Evaluation-and-Failure-Analysis/actions/runs/44235070790)
 
 Tóm tắt bằng chứng dùng cho mô tả PR lấy từ các lệnh kiểm chứng.
 

@@ -70,3 +70,5 @@ Pilot trong sandbox offline cho yêu cầu hoàn tiền một đơn, dữ liệu
 MockLLM, 14 item v1, 28 item v2 và judge replay chưa đại diện cho người dùng thật. Với 5 seed, lỗi hiếm xuất hiện khoảng 1/3 seed có thể bị bỏ sót hoặc cho CI rộng. Các lỗi có tương quan giữa item làm giảm lượng thông tin độc lập. Hidden tests và anchor key thuộc repo giảng viên. Provenance và integrity nội bộ vẫn cần baseline cùng spec lấy từ nhánh được bảo vệ để ngăn sửa đồng thời cả hai phía.
 
 Tăng eval-set version khi thêm hoặc đổi item, label, slice semantics hay nguồn dữ liệu. Tăng metric-spec version khi thêm metric hoặc đổi cách chấm, rồi tái sinh baseline tương ứng. Trong cùng eval-set version, ngưỡng chỉ được siết chặt theo ratchet. Run lại toàn bộ bằng `python scripts/check_lab9.py` từ `src`. Trạng thái CI, PR và nộp LMS được theo dõi trong `SUBMISSION.md`.
+
+CI Linux tại commit `d47be97` đã chạy thành công detect, Core eval-gate và Advanced eval-gate-v2, xác nhận baseline Windows tái lập được trên CI sau khi chuẩn hóa fingerprint. [Bằng chứng CI](https://github.com/trdphat/K5-L3B-Day09-TruongDucPhat-2A202603757-Evaluation-and-Failure-Analysis/actions/runs/44235070790)

@@ -43,3 +43,5 @@ Code tại commit `13a9d8a`. Chạy từ `src` bằng `python scripts/check_lab9
 | M7 | Mutation 3/3, 0 false alarm, bốn trap bị INTEGRITY block, có test dòng trùng và evaluator_failures trên run xanh |
 
 Bộ test nền đạt 57 test, bộ test Lab9 đạt 47 test. Tài liệu nộp đã điền tại `docs/failure_taxonomy.md`, `judge_audit.md`, `trace_case.md`, `eval_card.md` và `PRD_v1.1.md`. Trạng thái push, PR, CI, merge và LMS theo dõi tại `SUBMISSION.md`. Anchor key và hidden tests được kiểm tra ở repo giảng viên.
+
+CI Linux trên PR #1 đã xác nhận thành công cả detect, eval-gate và eval-gate-v2 tại commit `d47be97`, gồm baseline tái lập, fixed, seeded_regression, tests Advanced, eval set v2 và mutation. [CI run 44235070790](https://github.com/trdphat/K5-L3B-Day09-TruongDucPhat-2A202603757-Evaluation-and-Failure-Analysis/actions/runs/44235070790)
