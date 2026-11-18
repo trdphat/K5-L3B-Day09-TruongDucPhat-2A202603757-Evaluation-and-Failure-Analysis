@@ -8,6 +8,18 @@ import pytest
 pytestmark = pytest.mark.student
 
 
+def test_eval_set_sha_is_stable_across_git_line_endings(tmp_path):
+    from lab9.evalset import sha12
+
+    lf = tmp_path / "linux.jsonl"
+    crlf = tmp_path / "windows.jsonl"
+    lf.write_bytes(b'{"item_id":"A"}\n{"item_id":"B"}\n')
+    crlf.write_bytes(lf.read_bytes().replace(b"\n", b"\r\n"))
+    assert sha12(lf) == sha12(crlf)
+    crlf.write_bytes(b'{"item_id":"different"}\n')
+    assert sha12(lf) != sha12(crlf)
+
+
 def test_pre_deduction_is_detected_when_the_host_writes_nothing():
     from lab9.graders import ProposalAmountCorrect, RefundAmountCorrect
 
