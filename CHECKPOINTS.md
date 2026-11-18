@@ -26,3 +26,22 @@ Sau khi hoàn thành bài tập và commit baseline M4, workflow `eval-gate` ch�
 **M6 — Nhiễu.** A/A (`--aa 66,77,88,99,110`) cho Δ = 0 trên MockLLM; bạn giải thích vì sao với LLM thật dải nhiễu > 0 và sàn phải nằm ngoài dải đó. `pass_hat_5` blocking chặn `flaky_regression` (bug 1/5 seed) mà `pass_rate` trung bình không chặn ổn định.
 
 **M7 — Chống gian lận eval.** Mỗi file trong `reports/traps/` khiến gate exit 1 với lý do `INTEGRITY` (hoặc ratchet với `--base-spec`). `lab9.mutation` = 3/3, 0 báo nhầm. Hỏi: trap ẩn nào có thể còn lọt (gợi ý: dòng trùng lặp, evaluator_failures trên run xanh).
+
+## Kết quả kiểm chứng local ngày 18/11/2026
+
+Code tại commit `13a9d8a`. Chạy từ `src` bằng `python scripts/check_lab9.py`. Toàn bộ 28 lệnh kiểm chứng đạt exit code mong đợi, gồm các gate regression phải trả exit 1. Output đầy đủ ở `src/reports/checkpoints.json`.
+
+| Mốc | Bằng chứng đã có |
+|---|---|
+| M0 | M0 PASS, eval set v1 14 item, labels riêng |
+| M1 | Taxonomy 10 FM, 5 case anchor có bước sai đầu tiên, v1 check 0 problem |
+| M2 | Tone κ 0.757/P 0.857/R 0.800 đạt sàn, helpful κ 0.375/R 0.300 bị loại, audit 13 bất đồng |
+| M3 | Detection 100%, false alarm 0%, metric FM-08 và kiểm tra full proposal đã hoạt động |
+| M4 | Baseline/swarm/fixed exit 0, seeded_regression exit 1, pass_rate Δ −0.271, CI [−0.500, −0.057] |
+| M5 | V2 28 item, check 0 problem, slice_regression chỉ bị money_movement block với pass_rate 0.8500 |
+| M6 | A/A mọi metric Δ 0.0000, baseline pass_hat_5 0.8929, sàn blocking 0.80 |
+| M7 | Mutation 3/3, 0 false alarm, bốn trap bị INTEGRITY block, có test dòng trùng và evaluator_failures trên run xanh |
+
+Bộ test nền đạt 57 test, bộ test Lab9 đạt 47 test. Tài liệu nộp đã điền tại `docs/failure_taxonomy.md`, `judge_audit.md`, `trace_case.md`, `eval_card.md` và `PRD_v1.1.md`. Trạng thái push, PR, CI, merge và LMS theo dõi tại `SUBMISSION.md`. Anchor key và hidden tests được kiểm tra ở repo giảng viên.
+
+CI Linux trên PR #1 đã xác nhận thành công cả detect, eval-gate và eval-gate-v2 tại commit `d47be97`, gồm baseline tái lập, fixed, seeded_regression, tests Advanced, eval set v2 và mutation. [CI run 44235070790](https://github.com/trdphat/K5-L3B-Day09-TruongDucPhat-2A202603757-Evaluation-and-Failure-Analysis/actions/runs/44235070790)

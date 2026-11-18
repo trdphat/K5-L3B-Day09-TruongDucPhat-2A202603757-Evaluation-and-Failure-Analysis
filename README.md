@@ -148,3 +148,7 @@ src/config/metric_spec_v2.yaml, fm_map.yaml, data/eval/adversarial_v2.json      
 src/config/metric_spec.yaml   ngưỡng (ratchet: cùng eval-set version chỉ được chặt hơn)
 ```
 Quy tắc: không sửa file `lab8/`; không sửa tay `reports/`; không đặt nhãn inline trong item.
+
+## Tái lập bài làm M0–M7
+
+Trong `src`, chạy `python scripts/check_lab9.py` bằng môi trường đã cài dependencies. Trên PowerShell có thể gọi trực tiếp `.\.venv\Scripts\python.exe scripts/check_lab9.py`. Script chạy test, sinh baseline/report bằng CLI của lab, kiểm tra exit code kỳ vọng của gate, detection, A/A, mutation và bốn trap. Bằng chứng đầy đủ nằm ở `reports/checkpoints.json`, các trace đối chứng nằm ở `reports/trace_evidence.json`. Kết quả và trạng thái nộp theo dõi tại `CHECKPOINTS.md`, `SUBMISSION.md` và `docs/eval_card.md`.
